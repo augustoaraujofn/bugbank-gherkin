@@ -9,7 +9,7 @@ Funcionalidade: Transferência entre contas
     Dado que estou logado em uma conta de teste
     E tenho os dados de uma segunda conta de teste
 
-  @positivo @smoke
+  @CT-TRA-001 @positivo @smoke
   Cenário: Realizar uma transferência com saldo suficiente
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
@@ -19,7 +19,7 @@ Funcionalidade: Transferência entre contas
     E a aplicação deve apresentar uma confirmação
     E o saldo da conta de origem deve ser atualizado
 
-  @positivo
+  @CT-TRA-002 @positivo
   Cenário: Transferir todo o saldo disponível
     Dado que conheço o saldo disponível da conta de origem
     Quando informo os dados válidos da conta de destino
@@ -28,7 +28,7 @@ Funcionalidade: Transferência entre contas
     Então o sistema deve seguir a regra definida para transferência do saldo total
     E o saldo da conta de origem deve ser atualizado de acordo com o resultado
 
-  @negativo
+  @CT-TRA-003 @negativo
   Cenário: Tentar transferir um valor maior que o saldo disponível
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
@@ -38,7 +38,7 @@ Funcionalidade: Transferência entre contas
     E deve informar que o saldo é insuficiente
     E o saldo da conta de origem deve permanecer inalterado
 
-  @negativo
+  @CT-TRA-004 @negativo
   Cenário: Tentar transferir o valor zero
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
@@ -47,7 +47,7 @@ Funcionalidade: Transferência entre contas
     Então a aplicação deve impedir a operação
     E deve informar que o valor não é válido
 
-  @negativo
+  @CT-TRA-005 @negativo
   Cenário: Tentar transferir um valor negativo
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
@@ -56,7 +56,7 @@ Funcionalidade: Transferência entre contas
     Então a aplicação deve impedir a operação
     E o saldo da conta de origem deve permanecer inalterado
 
-  @negativo
+  @CT-TRA-006 @negativo
   Cenário: Tentar transferir sem informar o valor
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
@@ -65,7 +65,7 @@ Funcionalidade: Transferência entre contas
     Então a aplicação deve solicitar o valor da transferência
     E a operação não deve ser concluída
 
-  @negativo
+  @CT-TRA-007 @negativo
   Cenário: Tentar transferir sem informar os dados da conta de destino
     Quando acesso a funcionalidade de transferência
     E deixo os campos da conta de destino vazios
@@ -74,7 +74,7 @@ Funcionalidade: Transferência entre contas
     Então a aplicação deve solicitar os dados da conta de destino
     E a operação não deve ser concluída
 
-  @negativo
+  @CT-TRA-008 @negativo
   Cenário: Tentar transferir para uma conta inexistente
     Quando acesso a funcionalidade de transferência
     E informo dados de uma conta de destino inexistente
@@ -83,7 +83,7 @@ Funcionalidade: Transferência entre contas
     Então a aplicação não deve concluir a operação
     E deve apresentar uma mensagem sobre a conta de destino
 
-  @consistencia
+  @CT-TRA-009 @consistencia
   Cenário: Conferir os saldos das contas depois de uma transferência
     Dado que conheço os saldos iniciais das duas contas
     Quando realizo uma transferência válida da conta de origem para a conta de destino
