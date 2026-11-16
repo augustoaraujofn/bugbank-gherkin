@@ -1,11 +1,11 @@
-# BUG-003 — Cadastro permite utilizar um e-mail já cadastrado
+# BUG: CT-CAD-007 — Tentar cadastrar com um e-mail que já está em uso com ou sem saldo em conta
 
 **Título:** Cadastro permite a criação de contas com e-mail já utilizado  
 **Funcionalidade:** Cadastro de usuário  
 **Cenário relacionado:** CT-CAD-009 — Tentar cadastrar com um e-mail que já está em uso com ou sem saldo em conta  
 **Data da identificação:** 16/11/2026  
 **Ambiente (navegador e sistema):** Google Chrome / Linux  
-**Severidade:** Média  
+**Severidade:** Alta  
 **Prioridade:** Alta
 
 ## Pré-condições
@@ -37,6 +37,6 @@ A aplicação permite concluir um novo cadastro utilizando um endereço de e-mai
 
 ## Evidências
 
-- **Captura de tela ou vídeo:** Adicionar evidência da tentativa de cadastro duplicado.
+- **Captura de tela ou vídeo:** https://www.loom.com/share/dbe5933de13844b3a91a9eb1453034e7
 - **Dados fictícios utilizados:** Mesmo endereço de e-mail utilizado em uma conta previamente cadastrada.
-- **Frequência:** A confirmar durante a execução.
+- **Frequência:** Sempre (em todas as tentativas realizadas durante os testes).
