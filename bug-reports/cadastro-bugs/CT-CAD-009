@@ -1,0 +1,42 @@
+# BUG: CT-CAD-007 — Tentar cadastrar com um e-mail que já está em uso com ou sem saldo em conta
+
+**Título:** Cadastro permite a criação de contas com e-mail já utilizado  
+**Funcionalidade:** Cadastro de usuário  
+**Cenário relacionado:** CT-CAD-009 — Tentar cadastrar com um e-mail que já está em uso com ou sem saldo em conta  
+**Data da identificação:** 16/11/2026  
+**Ambiente (navegador e sistema):** Google Chrome / Linux  
+**Severidade:** Alta  
+**Prioridade:** Alta
+
+## Pré-condições
+
+- Acessar a aplicação BugBank.
+- Possuir uma conta previamente cadastrada.
+- Ter acesso à tela de cadastro.
+- Utilizar os dados fictícios de uma nova conta.
+
+## Passos para reproduzir
+
+1. Acessar a aplicação BugBank.
+2. Realizar o cadastro de uma conta utilizando um e-mail válido.
+3. Acessar novamente a opção **Registrar**.
+4. Informar o mesmo e-mail utilizado no cadastro anterior.
+5. Preencher o campo de nome.
+6. Informar uma senha válida.
+7. Repetir a mesma senha no campo de confirmação.
+8. Clicar no botão **Cadastrar**.
+9. Verificar a resposta apresentada pela aplicação.
+
+## Resultado esperado
+
+A aplicação deve identificar que o e-mail informado já está vinculado a uma conta existente, impedir a criação de um novo cadastro e apresentar uma mensagem informando que o e-mail já está cadastrado.
+
+## Resultado encontrado
+
+A aplicação permite concluir um novo cadastro utilizando um endereço de e-mail que já está associado a outra conta, sem impedir o registro duplicado ou apresentar a mensagem de validação esperada.
+
+## Evidências
+
+- **Captura de tela ou vídeo:** https://www.loom.com/share/751cead609a7460784826219abb05b8a
+- **Dados fictícios utilizados:** Mesmo endereço de e-mail utilizado em uma conta previamente cadastrada.
+- **Frequência:** Sempre (em todas as tentativas realizadas durante os testes).
