@@ -39,7 +39,7 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-004 @negativo
-  Cenário: Tentar cadastrar sem informar o e-mail
+  Cenário: Tentar cadastrar sem informar o e-mail com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E preencho o nome e os campos de senha
     Mas deixo o campo de e-mail vazio
@@ -48,7 +48,7 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-005 @negativo
-  Cenário: Tentar cadastrar sem informar o nome
+  Cenário: Tentar cadastrar sem informar o nome com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E informo um e-mail válido e preencho os campos de senha
     Mas deixo o campo de nome vazio
@@ -57,7 +57,7 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-006 @negativo
-  Cenário: Tentar cadastrar sem informar a senha
+  Cenário: Tentar cadastrar sem informar a senha com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E informo um e-mail válido e meu nome
     Mas deixo os campos de senha vazios
@@ -66,7 +66,7 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-007 @negativo
-  Cenário: Informar um e-mail em formato inválido
+  Cenário: Informar um e-mail em formato inválido com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E preencho meu nome e os campos de senha corretamente
     Mas informo um e-mail em formato inválido
@@ -75,7 +75,7 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-008 @negativo
-  Cenário: Informar senhas diferentes
+  Cenário: Informar senhas diferentes com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E preencho os dados de cadastro
     Mas informo uma senha diferente no campo de confirmação
@@ -84,26 +84,8 @@ Funcionalidade: Cadastro de conta
     E a conta não deve ser criada
 
   @CT-CAD-009 @negativo
-  Cenário: Tentar cadastrar com um e-mail que já está em uso
+  Cenário: Tentar cadastrar com um e-mail que já está em uso com ou sem saldo em conta
     Dado que existe uma conta cadastrada com um determinado e-mail
     Quando tento criar outra conta utilizando esse mesmo e-mail
     Então a aplicação deve impedir o cadastro duplicado
     E deve apresentar uma mensagem informando o motivo
-
-  @CT-CAD-010 @saldo-inicial
-  Cenário: Criar uma conta marcando a opção de saldo inicial
-    Quando acesso a opção "Registrar"
-    E preencho os dados de cadastro corretamente
-    E marco a opção "Criar conta com saldo"
-    E clico em "Cadastrar"
-    Então a aplicação deve concluir o cadastro
-    E o saldo inicial apresentado deve corresponder à regra dessa opção
-
-  @CT-CAD-011 @saldo-inicial
-  Cenário: Criar uma conta sem marcar a opção de saldo inicial
-    Quando acesso a opção "Registrar"
-    E preencho os dados de cadastro corretamente
-    E deixo desmarcada a opção "Criar conta com saldo"
-    E clico em "Cadastrar"
-    Então a aplicação deve concluir o cadastro
-    E o saldo inicial apresentado deve corresponder à regra da opção desmarcada
