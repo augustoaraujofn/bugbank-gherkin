@@ -1,75 +1,136 @@
-# BugBank — cenários de teste com BDD e Gherkin
+# BugBank — Testes de Software com BDD e Gherkin
 
-Este projeto reúne cenários de teste que estou elaborando para praticar análise de requisitos e escrita de casos de teste com BDD e Gherkin. Escolhi o BugBank porque ele simula operações de um banco digital e permite explorar diferentes fluxos de uma aplicação.
+## Sobre o projeto
 
-**Aplicação:** https://bugbank.netlify.app/  
+Este projeto tem como objetivo aplicar conhecimentos de Quality Assurance (QA) por meio da elaboração e execução de testes manuais na aplicação BugBank.
+
+Foram desenvolvidos cenários de teste utilizando BDD (Behavior-Driven Development) e Gherkin, contemplando diferentes funcionalidades da aplicação, com foco na validação de comportamentos, identificação de possíveis defeitos e análise da consistência das operações.
+
+O projeto também contempla o registro de evidências e a documentação dos defeitos identificados durante as verificações.
+
+**Aplicação:** https://bugbank.netlify.app/
+
 **Requisitos:** https://bugbank.netlify.app/requirements
 
-## Funcionalidades cobertas
+## Objetivos
 
-| Arquivo | O que estou verificando |
+- Elaborar cenários de teste utilizando Gherkin.
+- Aplicar conceitos de BDD na especificação de comportamentos.
+- Executar testes manuais nas funcionalidades da aplicação.
+- Validar comportamentos esperados e identificar inconsistências.
+- Aplicar cenários positivos, negativos e de consistência.
+- Registrar evidências das verificações realizadas.
+- Documentar defeitos encontrados durante os testes.
+
+## Funcionalidades testadas
+
+Os cenários foram organizados de acordo com as funcionalidades da aplicação:
+
+| Funcionalidade | Descrição |
 |---|---|
-| `cadastro.feature` | Criação de conta e validação dos dados informados |
-| `login.feature` | Acesso com credenciais válidas e inválidas |
-| `conta.feature` | Visualização dos dados da conta e do saldo |
-| `transferencia.feature` | Transferências entre contas e validações dos valores e destinatários |
-| `pagamento.feature` | Preenchimento dos dados de pagamento, confirmação e atualização do saldo |
-| `extrato.feature` | Consulta e conferência das movimentações da conta |
-| `saque.feature` | Solicitação de saque e validação do saldo disponível |
+| Cadastro | Criação de contas e validação dos dados informados |
+| Login | Autenticação e validação de credenciais |
+| Conta | Consulta de informações e verificação de saldo |
+| Transferência | Validação de operações entre contas |
+| Extrato | Consulta, ordenação e consistência das movimentações |
+| Pagamento | Validação dos dados e regras de pagamento |
+| Saque | Validação das operações de retirada de saldo |
 
-## Organização do repositório
+## Tipos de testes abordados
+
+- **Testes positivos:** validação de operações com dados válidos.
+- **Testes negativos:** verificação do comportamento diante de dados inválidos ou operações não permitidas.
+- **Testes de consistência:** conferência da integridade das informações e atualização do saldo.
+- **Testes exploratórios:** investigação de comportamentos inesperados e possíveis falhas.
+- **Testes de regressão:** verificação de funcionalidades para identificar possíveis impactos em comportamentos já existentes.
+
+## Tecnologias e práticas utilizadas
+
+| Tecnologia / Prática | Aplicação |
+|---|---|
+| Gherkin | Escrita dos cenários de teste |
+| BDD | Especificação de comportamentos |
+| Markdown | Documentação do projeto |
+| Git e GitHub | Versionamento e organização dos arquivos |
+| Testes manuais | Execução e validação dos cenários |
+
+## Estrutura do projeto
 
 ```text
 bugbank-gherkin/
-├── README.md
+│
+├── bug-reports/
+│   └── Relatórios de defeitos identificados
+│
+├── docs/
+│   ├── analise-inicial.md
+│   └──plano-de-testes.md   
+│
+├── evidências/
+│   ├── cadastro.evid
+│   ├── conta.evid
+│   ├── extrato.evid
+│   ├── login.evid
+│   ├── pagamento.evid
+│   ├── saque.evid
+|   └── transferencia.evid
+│
 ├── features/
 │   ├── cadastro.feature
-│   ├── login.feature
 │   ├── conta.feature
-│   ├── transferencia.feature
-│   ├── pagamento.feature
 │   ├── extrato.feature
-│   └── saque.feature
-└── docs/
-    ├── analise-inicial.md
-    ├── plano-de-testes.md
-    └── modelo-bug-report.md
+│   ├── login.feature
+│   ├── pagamento.feature
+│   ├── saque.feature
+|   └── transferencia.feature
+│
+└── README.md
 ```
 
-## Exemplo de cenário
+## Exemplo de cenário em Gherkin
 
 ```gherkin
-Cenário: Realizar uma transferência com saldo suficiente
-  Dado que estou logado em uma conta com saldo disponível
-  E tenho os dados de uma conta de destino válida
-  Quando informo os dados da conta de destino
-  E preencho um valor menor que o saldo disponível
-  E confirmo a transferência
-  Então a operação deve ser concluída
-  E o saldo da minha conta deve ser atualizado
+@CT-TRA-001 @positivo @smoke
+  Cenário: Realizar uma transferência com saldo suficiente
+    Quando acesso a funcionalidade de transferência
+    E informo os dados válidos da conta de destino
+    E preencho um valor menor que o saldo disponível
+    E confirmo a transferência
+    Então a operação deve ser concluída
+    E a aplicação deve apresentar uma confirmação
+    E o saldo da conta de origem deve ser atualizado
 ```
 
-## Como estou conduzindo os testes
+## Execução e análise dos testes
 
-Nesta versão, o foco é **planejamento e documentação de cenários em Gherkin**. Não há código de automação, integração contínua ou execução automatizada.
+Todos os cenários de teste documentados em Gherkin foram utilizados durante a execução de testes manuais na aplicação BugBank.
 
-Os cenários ainda precisam ser executados manualmente na aplicação. Durante essa etapa, vou comparar o resultado encontrado com o resultado esperado, registrar evidências quando forem úteis e revisar os passos que se mostrarem pouco claros.
+Durante as execuções, foram analisados os comportamentos das funcionalidades, comparando os resultados obtidos com os resultados esperados, com o objetivo de identificar possíveis inconsistências e defeitos.
 
-Não vou marcar cenários como aprovados ou reprovados antes de executá-los. Caso encontre uma diferença entre o comportamento observado e o esperado, vou documentá-la usando o modelo de bug report disponível em `docs/modelo-bug-report.md`.
+As evidências das verificações realizadas estão organizadas no diretório `evidências/`, enquanto os defeitos identificados são documentados em `bug-reports/`.
 
-## Observações sobre os requisitos
+Durante os testes, algumas limitações da aplicação foram identificadas. As funcionalidades de Pagamento e Saque, por exemplo, apresentaram mensagens informando que estavam em desenvolvimento, impossibilitando a execução prática dos respectivos fluxos.
 
-A página de requisitos do BugBank apresenta as áreas de login, cadastro, transferência, pagamento, extrato e saque. Ela também informa que a aplicação não utiliza banco de dados e que as informações são armazenadas em memória local.
+Nesses casos, os impedimentos foram registrados como evidências, mantendo a documentação dos cenários para futuras validações.
 
-Nem todas as regras de negócio, mensagens de validação ou limites estão descritos nessa página. Por isso, os cenários que dependem desses detalhes devem ser confirmados durante a exploração da aplicação. Não defini valores, tarifas ou mensagens específicas sem uma referência que os comprove.
+**Abordagem:** testes manuais, BDD e documentação em Gherkin. O projeto não contempla automação da execução dos testes.
 
-## Documentos de apoio
+## Aprendizados
 
-- `docs/analise-inicial.md`: observações iniciais e pontos que precisam ser confirmados.
-- `docs/plano-de-testes.md`: objetivo, escopo e abordagem de execução manual.
-- `docs/modelo-bug-report.md`: modelo para registrar defeitos encontrados durante os testes.
+O desenvolvimento deste projeto proporcionou a prática de atividades importantes para QA, como:
+
+- Análise de requisitos e identificação de comportamentos esperados.
+- Elaboração e organização de cenários de teste.
+- Aplicação de BDD e Gherkin.
+- Execução de testes manuais.
+- Identificação e documentação de possíveis defeitos.
+- Registro e organização de evidências.
+- Análise de resultados e identificação de limitações da aplicação.
 
 ## Autor
 
-**Augusto Araújo**  
-[GitHub](https://github.com/augustoaraujofn) · [LinkedIn](https://www.linkedin.com/in/augusto-ara%C3%BAjo/)
+**Augusto Araújo**
+
+[GitHub](https://github.com/augustoaraujofn)
+
+[LinkedIn](https://www.linkedin.com/in/augusto-ara%C3%BAjo/)
