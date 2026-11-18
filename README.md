@@ -60,8 +60,8 @@ Os cenários foram organizados de acordo com as funcionalidades da aplicação:
 bugbank-gherkin/
 │
 ├── bug-reports/
-│   └── Relatórios de defeitos identificados
-│
+│   ├── CT-CAD-007-bug
+|   └── CT-CAD-009-bug   
 ├── docs/
 │   ├── analise-inicial.md
 │   └──plano-de-testes.md   
