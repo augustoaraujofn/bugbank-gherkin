@@ -30,4 +30,4 @@ A transferência é concluída, mas a aplicação não redireciona o usuário pa
 Evidências
 Captura de tela ou vídeo: [inserir link]
 Dados fictícios utilizados: Conta de destino válida, valor menor que o saldo e descrição preenchida.
-Frequência: [preencher, ex.: Sempre (100% das tentativas realizadas)]
+Frequência: Sempre (em todas as tentativas realizadas durante os testes).
