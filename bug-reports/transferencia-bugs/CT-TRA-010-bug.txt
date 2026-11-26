@@ -12,6 +12,7 @@ Pré-condições
 Acessar a aplicação BugBank.
 Possuir uma conta de origem com saldo disponível e estar logado nela.
 Possuir uma segunda conta válida para ser usada como destino.
+
 Passos para reproduzir
 Acessar a funcionalidade de Transferência.
 Informar o número e o dígito de uma conta de destino válida.
@@ -28,6 +29,6 @@ Resultado encontrado
 A transferência é concluída, mas a aplicação não redireciona o usuário para a tela de extrato, mantendo-o na tela de transferência.
 
 Evidências
-Captura de tela ou vídeo: [inserir link]
+Captura de tela ou vídeo: https://www.awesomescreenshot.com/video/58695635?key=277e9915450835ad6d32ab8356eccb2c
 Dados fictícios utilizados: Conta de destino válida, valor menor que o saldo e descrição preenchida.
 Frequência: Sempre (em todas as tentativas realizadas durante os testes).
