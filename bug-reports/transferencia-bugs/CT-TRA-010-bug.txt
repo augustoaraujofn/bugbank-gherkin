@@ -1,0 +1,33 @@
+BUG: CT-TRA-010 — Transferência concluída não redireciona para o extrato
+
+Título: Após realizar a transferência com sucesso, a aplicação não redireciona o usuário para o extrato
+Funcionalidade: Transferência entre contas
+Cenário relacionado: CT-TRA-010 — Ser redirecionado para o extrato após realizar a transferência
+Data da identificação: 26/11/2026
+Ambiente (navegador e sistema): [preencher: navegador / sistema operacional]
+Severidade: Média
+Prioridade: Alta
+
+Pré-condições
+Acessar a aplicação BugBank.
+Possuir uma conta de origem com saldo disponível e estar logado nela.
+Possuir uma segunda conta válida para ser usada como destino.
+Passos para reproduzir
+Acessar a funcionalidade de Transferência.
+Informar o número e o dígito de uma conta de destino válida.
+Preencher um valor menor que o saldo disponível.
+Preencher a descrição.
+Clicar no botão Transferir agora.
+Verificar a tela exibida após a conclusão da transferência.
+Resultado esperado
+
+Após a transferência ser realizada com sucesso, a aplicação deve exibir a mensagem "Transferência realizada com sucesso", debitar o valor da conta de origem e redirecionar o usuário para a tela de extrato.
+
+Resultado encontrado
+
+A transferência é concluída, mas a aplicação não redireciona o usuário para a tela de extrato, mantendo-o na tela de transferência.
+
+Evidências
+Captura de tela ou vídeo: [inserir link]
+Dados fictícios utilizados: Conta de destino válida, valor menor que o saldo e descrição preenchida.
+Frequência: [preencher, ex.: Sempre (100% das tentativas realizadas)]
