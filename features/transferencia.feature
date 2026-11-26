@@ -89,3 +89,23 @@ Funcionalidade: Transferência entre contas
     Quando realizo uma transferência válida da conta de origem para a conta de destino
     Então o saldo da conta de origem deve diminuir pelo valor transferido
     E o saldo da conta de destino deve aumentar pelo mesmo valor
+
+     @CT-TRA-010 @positivo
+  Cenário: Ser redirecionado para o extrato após realizar a transferência
+    Quando acesso a funcionalidade de transferência
+    E informo os dados válidos da conta de destino
+    E preencho um valor menor que o saldo disponível
+    E confirmo a transferência
+    Então a operação deve ser concluída
+    E devo ser redirecionado para a tela de extrato
+
+  @CT-TRA-011 @negativo
+  Cenário: Tentar transferir sem preencher a descrição
+    Quando acesso a funcionalidade de transferência
+    E informo os dados válidos da conta de destino
+    E preencho um valor válido
+    Mas deixo o campo de descrição vazio
+    E confirmo a transferência
+    Então a aplicação não deve concluir a transferência
+    E deve indicar que o campo descrição é obrigatório
+    E o saldo da conta de origem deve permanecer inalterado
