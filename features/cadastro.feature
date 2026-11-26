@@ -51,7 +51,7 @@ Funcionalidade: Cadastro de conta
   Cenário: Tentar cadastrar sem informar o nome com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E informo um e-mail válido e preencho os campos de senha
-    Mas deixo o campo de nome vazio
+    E deixo o campo de nome vazio
     E clico em "Cadastrar"
     Então a aplicação deve solicitar o nome
     E a conta não deve ser criada
@@ -60,7 +60,7 @@ Funcionalidade: Cadastro de conta
   Cenário: Tentar cadastrar sem informar a senha com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E informo um e-mail válido e meu nome
-    Mas deixo os campos de senha vazios
+    E deixo os campos de senha vazios
     E clico em "Cadastrar"
     Então a aplicação deve solicitar o preenchimento da senha
     E a conta não deve ser criada
@@ -69,7 +69,7 @@ Funcionalidade: Cadastro de conta
   Cenário: Informar um e-mail em formato inválido com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E preencho meu nome e os campos de senha corretamente
-    Mas informo um e-mail em formato inválido
+    E informo um e-mail em formato inválido
     E clico em "Cadastrar"
     Então a aplicação deve indicar que o e-mail é inválido
     E a conta não deve ser criada
@@ -78,7 +78,7 @@ Funcionalidade: Cadastro de conta
   Cenário: Informar senhas diferentes com ou sem saldo em conta
     Quando acesso a opção "Registrar"
     E preencho os dados de cadastro
-    Mas informo uma senha diferente no campo de confirmação
+    E informo uma senha diferente no campo de confirmação
     E clico em "Cadastrar"
     Então a aplicação deve informar que as senhas não correspondem
     E a conta não deve ser criada
