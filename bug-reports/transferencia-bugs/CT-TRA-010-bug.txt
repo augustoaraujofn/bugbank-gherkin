@@ -4,7 +4,7 @@ Título: Após realizar a transferência com sucesso, a aplicação não redirec
 Funcionalidade: Transferência entre contas
 Cenário relacionado: CT-TRA-010 — Ser redirecionado para o extrato após realizar a transferência
 Data da identificação: 26/11/2026
-Ambiente (navegador e sistema): [preencher: navegador / sistema operacional]
+Ambiente (navegador e sistema): (navegador e sistema):** Google Chrome / Linux  
 Severidade: Média
 Prioridade: Alta
 
