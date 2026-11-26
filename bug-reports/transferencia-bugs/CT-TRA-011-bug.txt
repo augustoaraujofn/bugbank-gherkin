@@ -4,7 +4,7 @@ Título: Transferência é realizada mesmo com o campo descrição vazio
 Funcionalidade: Transferência entre contas
 Cenário relacionado: CT-TRA-011 — Tentar transferir sem preencher a descrição
 Data da identificação: 26/11/2026
-Ambiente (navegador e sistema): [preencher: navegador / sistema operacional]
+Ambiente (navegador e sistema): ** Google Chrome / Linux  
 Severidade: Média
 Prioridade: Alta
 
