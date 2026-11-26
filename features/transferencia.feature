@@ -104,7 +104,7 @@ Funcionalidade: Transferência entre contas
     Quando acesso a funcionalidade de transferência
     E informo os dados válidos da conta de destino
     E preencho um valor válido
-    Mas deixo o campo de descrição vazio
+    E deixo o campo de descrição vazio
     E confirmo a transferência
     Então a aplicação não deve concluir a transferência
     E deve indicar que o campo descrição é obrigatório
